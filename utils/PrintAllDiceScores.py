@@ -13,3 +13,6 @@ def PrintAllDiceScores(model, device, test_loader):
     avg_dice = np.mean(all_dice_scores)
     print(f"\nAverage Dice Score across all test images: {avg_dice:.4f}")
     return all_dice_scores
+    
+model.load_state_dict(torch.load("best_model.pt"))
+all_dice_results = PrintAllDiceScores(model, device, test_loader)
