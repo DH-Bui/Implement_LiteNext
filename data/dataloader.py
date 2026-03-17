@@ -23,3 +23,5 @@ def get_dataloader(batch_size):
     train_loader = DataLoader(MedicalDataset(x_train, y_train, strong_tf, weak_tf), batch_size=batch_size, shuffle=True)
     test_loader = DataLoader(MedicalDataset(x_test, y_test, weak_tf, weak_tf), batch_size=1, shuffle=False)
     return train_loader, test_loader
+
+train_loader, test_loader = get_dataloader(args.batch_size)
